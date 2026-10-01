@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#05060a" />
+  <meta name="description" content="Purushottam — Full-Stack Web Developer. Immersive Three.js portfolio with modern full-stack projects, services, skills and contact." />
+  <title>Purushottam — 3D Full-Stack Developer Portfolio</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__ring"></div>
+    <div class="preloader__mark">P.</div>
+    <div class="preloader__copy"><span>INITIALIZING 3D PORTFOLIO</span><strong id="loaderPercent">0%</strong></div>
+  </div>
+
+  <div id="webgl" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor cursor--dot" aria-hidden="true"></div>
+  <div class="cursor cursor--ring" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <video id="textureVideo" class="texture-video" src="assets/purushottam-showreel.mp4" muted loop playsinline preload="auto"></video>
+
+  <header class="site-header" id="siteHeader">
+    <a href="#home" class="brand magnetic" aria-label="Purushottam home">
+      <span class="brand__dot"></span><strong>PURUSHOTTAM</strong><small>FULL-STACK DEV</small>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="status-pill magnetic" href="#contact"><i></i><span>Available for selected projects</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__inner">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#work">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <aside class="social-rail" aria-label="Social links">
+    <span>CONNECT</span>
+    <a href="https://github.com/purusottamkumar674" target="_blank" rel="noreferrer">GH</a>
+    <a href="https://wa.me/917761980518" target="_blank" rel="noreferrer">WA</a>
+    <a href="mailto:purusottamsingh238@gmail.com">EM</a>
+  </aside>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero__eyebrow reveal-text"><span>HELLO, I BUILD FOR THE WEB</span></div>
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <h1 class="hero__title" aria-label="Digital ideas built to move">
+            <span class="line"><span>DIGITAL</span></span>
+            <span class="line accent-line"><span>IDEAS,</span></span>
+            <span class="line"><span>BUILT TO MOVE.</span></span>
+          </h1>
+          <p class="hero__lead reveal-up">I design and develop modern websites, admin systems, creator platforms and production-ready full-stack products with <strong>Next.js, TypeScript and Supabase.</strong></p>
+          <div class="hero__actions reveal-up">
+            <a class="btn btn--solid magnetic" href="#work"><span>Explore selected work</span><b>↗</b></a>
+            <a class="btn btn--ghost magnetic" href="#showreel"><span>Play showreel</span><b>▶</b></a>
+          </div>
+          <div class="hero__stats reveal-up">
+            <div><strong data-count="34">0</strong><span>+ Projects</span></div>
+            <div><strong>100</strong><span>% Responsive</span></div>
+            <div><strong>2025</strong><span>→ Present</span></div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Interactive 3D developer media">
+          <div class="media-orbit media-orbit--one"></div>
+          <div class="media-orbit media-orbit--two"></div>
+          <div class="hero-card glass-card tilt-card">
+            <div class="hero-card__top"><span>3D MEDIA FEED</span><i>LIVE</i></div>
+            <video src="assets/purushottam-showreel.mp4" poster="assets/video-poster.jpg" autoplay muted loop playsinline></video>
+            <div class="hero-card__footer"><strong>PURUSHOTTAM / DEV</strong><span>Three.js × GSAP</span></div>
+          </div>
+          <div class="floating-chip floating-chip--a">NEXT.JS</div>
+          <div class="floating-chip floating-chip--b">SUPABASE</div>
+          <div class="floating-chip floating-chip--c">WEBGL</div>
+          <div class="hero-scroll"><span>SCROLL</span><i></i></div>
+        </div>
+      </div>
+
+      <div class="tech-marquee" aria-hidden="true">
+        <div class="tech-marquee__track">
+          <span>NEXT.JS ✦ REACT ✦ TYPESCRIPT ✦ SUPABASE ✦ TAILWIND ✦ GSAP ✦ THREE.JS ✦ POSTGRESQL ✦ VERCEL ✦</span>
+          <span>NEXT.JS ✦ REACT ✦ TYPESCRIPT ✦ SUPABASE ✦ TAILWIND ✦ GSAP ✦ THREE.JS ✦ POSTGRESQL ✦ VERCEL ✦</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="section-label"><span>01</span><b>ABOUT</b></div>
+      <div class="about__grid">
+        <div class="portrait-wrap reveal-left">
+          <div class="portrait-frame tilt-card">
+            <img src="assets/purushottam.jpeg" alt="Purushottam, full-stack web developer at a workstation" />
+            <div class="portrait-scan"></div>
+            <div class="portrait-caption"><span>DEVELOPER PROFILE</span><strong>INDIA / REMOTE</strong></div>
+          </div>
+          <div class="orbit-copy orbit-copy--top">CODE • BUILD • LEARN • REPEAT •</div>
+        </div>
+        <div class="about__content">
+          <p class="kicker reveal-up">ABOUT ME</p>
+          <h2 class="display-title split-title">I connect sharp interfaces with solid systems.</h2>
+          <p class="body-xl reveal-up">I am a web developer focused on turning real business workflows into polished digital products. My work combines responsive interface design, secure authentication, structured data, admin tools and production deployment.</p>
+          <p class="body-lg muted reveal-up">I care about the complete path: how a visitor understands a page, how a team manages content, how permissions protect data and how the final product behaves in production.</p>
+          <div class="about__meta reveal-up">
+            <div><small>FOCUS</small><strong>Modern full-stack web products</strong></div>
+            <div><small>CORE STACK</small><strong>Next.js · TypeScript · Supabase</strong></div>
+            <div><small>AVAILABILITY</small><strong>Selected projects</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="section-label"><span>02</span><b>CAPABILITIES</b></div>
+      <div class="section-heading">
+        <p class="kicker">TOOLKIT</p>
+        <h2 class="display-title split-title">Technology is useful when the experience feels simple.</h2>
+      </div>
+
+      <div class="skill-orbit-wrap reveal-up">
+        <div class="skill-orbit-center"><span>BUILD</span><strong>FULL<br>STACK</strong><small>PRODUCTS</small></div>
+        <div class="skill-orbit orbit-1"><span>NEXT</span><span>REACT</span><span>TS</span><span>JS</span></div>
+        <div class="skill-orbit orbit-2"><span>SQL</span><span>RLS</span><span>API</span><span>AUTH</span><span>SEO</span></div>
+        <div class="skill-orbit orbit-3"><span>GSAP</span><span>THREE</span><span>VERCEL</span><span>GIT</span><span>ADS</span><span>UI</span></div>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card glass-card tilt-card reveal-up"><header><span>01</span><h3>Frontend</h3></header><ul><li><b>Next.js</b><i style="--p:94%"></i><em>94%</em></li><li><b>React</b><i style="--p:93%"></i><em>93%</em></li><li><b>TypeScript</b><i style="--p:91%"></i><em>91%</em></li><li><b>Tailwind CSS</b><i style="--p:95%"></i><em>95%</em></li><li><b>Responsive UI</b><i style="--p:96%"></i><em>96%</em></li></ul></article>
+        <article class="skill-card glass-card tilt-card reveal-up"><header><span>02</span><h3>Backend</h3></header><ul><li><b>Supabase</b><i style="--p:91%"></i><em>91%</em></li><li><b>PostgreSQL</b><i style="--p:86%"></i><em>86%</em></li><li><b>Authentication</b><i style="--p:90%"></i><em>90%</em></li><li><b>Row Level Security</b><i style="--p:86%"></i><em>86%</em></li><li><b>REST APIs</b><i style="--p:88%"></i><em>88%</em></li></ul></article>
+        <article class="skill-card glass-card tilt-card reveal-up"><header><span>03</span><h3>Ship & Grow</h3></header><ul><li><b>Git & GitHub</b><i style="--p:89%"></i><em>89%</em></li><li><b>Vercel</b><i style="--p:92%"></i><em>92%</em></li><li><b>SEO</b><i style="--p:84%"></i><em>84%</em></li><li><b>Digital Marketing</b><i style="--p:90%"></i><em>90%</em></li><li><b>Google / Meta Ads</b><i style="--p:86%"></i><em>86%</em></li></ul></article>
+      </div>
+    </section>
+
+    <section class="experience section" id="experience">
+      <div class="section-label"><span>03</span><b>EXPERIENCE</b></div>
+      <div class="experience__intro">
+        <p class="kicker">WORK HISTORY</p>
+        <h2 class="display-title split-title">Work shaped by shipping, learning and improving.</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-row reveal-up"><span class="timeline-no">01</span><div><small>INDEPENDENT PRODUCT DEVELOPMENT</small><h3>Full-Stack Web Developer</h3><p>Building production-focused websites, dashboards, creator platforms, healthcare experiences and admin systems from interface through deployment.</p><div class="tag-row"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>Vercel</span></div></div><time>2025 — PRESENT</time></article>
+        <article class="timeline-row reveal-up"><span class="timeline-no">02</span><div><small>CREATORMOVES365</small><h3>Creator Platform Developer</h3><p>Designed privacy-aware creator operations, multi-role authentication, duplicate prevention, outreach workflows and admin oversight.</p><div class="tag-row"><span>Next.js</span><span>Supabase</span><span>RLS</span><span>TypeScript</span></div></div><time>2026</time></article>
+        <article class="timeline-row reveal-up"><span class="timeline-no">03</span><div><small>BUSINESS & BRAND WEBSITES</small><h3>Frontend & Interaction Developer</h3><p>Created responsive, motion-rich interfaces for corporate, healthcare, real-estate, food, gaming and nonprofit projects.</p><div class="tag-row"><span>React</span><span>Tailwind CSS</span><span>Framer Motion</span><span>GSAP</span></div></div><time>2025 — 2026</time></article>
+        <article class="timeline-row reveal-up"><span class="timeline-no">04</span><div><small>OPERATIONS PLATFORMS</small><h3>Admin Systems Developer</h3><p>Implemented secure dashboards, role permissions, data imports, task assignment, alerts, reporting and content management.</p><div class="tag-row"><span>Next.js</span><span>Supabase</span><span>PostgreSQL</span><span>Auth</span></div></div><time>2025 — 2026</time></article>
+      </div>
+    </section>
+
+    <section class="showreel section" id="showreel">
+      <div class="showreel__sticky">
+        <div class="showreel__copy">
+          <p class="kicker">04 / MOTION PROFILE</p>
+          <h2 class="display-title">A developer portfolio that moves like a product.</h2>
+          <p>Uploaded video is used as a live media layer, HTML showreel and Three.js video texture.</p>
+        </div>
+        <div class="showreel__stage">
+          <div class="video-shell tilt-card">
+            <video id="mainShowreel" src="assets/purushottam-showreel.mp4" poster="assets/video-poster.jpg" autoplay muted loop playsinline controls></video>
+            <div class="video-shell__hud"><span>SHOWREEL / 00:08</span><span>H.264</span></div>
+          </div>
+          <div class="signal signal--a"></div><div class="signal signal--b"></div><div class="signal signal--c"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work section" id="work">
+      <div class="section-label"><span>05</span><b>SELECTED WORK</b></div>
+      <div class="section-heading section-heading--row">
+        <div><p class="kicker">PROJECT ARCHIVE</p><h2 class="display-title split-title">Projects built around real workflows.</h2></div>
+        <p class="section-note">A selection from 34+ project records spanning business, creator platforms, healthcare, real estate, ecommerce and technology.</p>
+      </div>
+      <div class="project-grid">
+        <a class="project-card project-card--wide tilt-card reveal-up" href="https://pinnacleelitecorp.com" target="_blank" rel="noreferrer"><div class="project-card__bg"><span>PE</span></div><div class="project-card__top"><span>01 · BUSINESS</span><em>LIVE ↗</em></div><h3>Pinnacle Elite Corp</h3><p>Premium multi-company corporate platform with investment journeys and cinematic brand interactions.</p><div class="tag-row"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind</span></div></a>
+        <a class="project-card tilt-card reveal-up" href="https://peakdivine.com" target="_blank" rel="noreferrer"><div class="project-card__bg"><span>PD</span></div><div class="project-card__top"><span>02 · BUSINESS</span><em>LIVE ↗</em></div><h3>Peak Divine</h3><p>Polished brand site with clear offers and focused customer journeys.</p><div class="tag-row"><span>Next.js</span><span>React</span><span>TypeScript</span></div></a>
+        <a class="project-card tilt-card reveal-up" href="https://theamanlife.com" target="_blank" rel="noreferrer"><div class="project-card__bg"><span>TA</span></div><div class="project-card__top"><span>03 · BRAND</span><em>LIVE ↗</em></div><h3>The Aman Life</h3><p>Personal-brand and investment experience with premium storytelling.</p><div class="tag-row"><span>Next.js</span><span>React</span><span>Motion</span></div></a>
+        <a class="project-card project-card--wide tilt-card reveal-up" href="https://worldwideprominentproperties.com" target="_blank" rel="noreferrer"><div class="project-card__bg"><span>WP</span></div><div class="project-card__top"><span>04 · REAL ESTATE</span><em>LIVE ↗</em></div><h3>Worldwide Prominent Properties</h3><p>Premium property discovery experience with listing, location and high-intent enquiry flows.</p><div class="tag-row"><span>Next.js</span><span>Supabase</span><span>Tailwind</span></div></a>
+        <a class="project-card tilt-card reveal-up" href="https://aa100xtech.com" target="_blank" rel="noreferrer"><div class="project-card__bg"><span>AT</span></div><div class="project-card__top"><span>05 · TECHNOLOGY</span><em>LIVE ↗</em></div><h3>AA100X Tech</h3><p>Modern technology brand experience with structured messaging and lead paths.</p><div class="tag-row"><span>Next.js</span><span>TypeScript</span><span>Vercel</span></div></a>
+        <a class="project-card tilt-card reveal-up" href="https://creatormoves365.ai" target="_blank" rel="noreferrer"><div class="project-card__bg"><span>CM</span></div><div class="project-card__top"><span>06 · CREATOR PLATFORM</span><em>LIVE ↗</em></div><h3>Creator Moves 365</h3><p>Creator-focused platform for collaboration, prompt workflows and connected operations.</p><div class="tag-row"><span>Next.js</span><span>Supabase</span><span>RLS</span></div></a>
+        <a class="project-card project-card--wide tilt-card reveal-up" href="https://omphysioworld.com" target="_blank" rel="noreferrer"><div class="project-card__bg"><span>OP</span></div><div class="project-card__top"><span>07 · HEALTHCARE</span><em>VIEW ↗</em></div><h3>Om Physio World</h3><p>Healthcare experience for physiotherapy services, treatment education, facilities and clinic discovery.</p><div class="tag-row"><span>Next.js</span><span>TypeScript</span><span>Tailwind</span></div></a>
+      </div>
+      <div class="work-cta reveal-up"><span>34+ PROJECT RECORDS / MULTIPLE INDUSTRIES</span><a href="https://myprofolie-zke1.vercel.app/#projects" target="_blank" rel="noreferrer" class="btn btn--ghost magnetic">Open original project archive ↗</a></div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="section-label"><span>06</span><b>SERVICES</b></div>
+      <div class="section-heading"><p class="kicker">FROM IDEA TO LAUNCH</p><h2 class="display-title split-title">A dependable product, not just a pretty page.</h2></div>
+      <div class="services-grid">
+        <article class="service-card reveal-up"><span>01</span><h3>Full-Stack Web Development</h3><p>Production-ready applications from interface and database design through secure deployment.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>02</span><h3>Next.js Development</h3><p>Fast, SEO-friendly sites and applications with modern routing and component systems.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>03</span><h3>Frontend Development</h3><p>Responsive, accessible interfaces with strong hierarchy and thoughtful interaction.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>04</span><h3>Admin Dashboards</h3><p>Secure operational dashboards, management workflows and practical content controls.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>05</span><h3>Supabase Integration</h3><p>Auth, PostgreSQL, storage, realtime functionality and Row Level Security.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>06</span><h3>Auth Systems</h3><p>Role-aware sign in, protected routes, session checks and permission architecture.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>07</span><h3>Responsive Websites</h3><p>Purpose-built mobile, tablet, laptop and large-screen experiences.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>08</span><h3>Website Redesign</h3><p>Modernized visual systems, UX, performance and conversion paths.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>09</span><h3>SaaS & API Integration</h3><p>Scalable product foundations, subscriptions, external services and internal workflows.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>10</span><h3>Deployment & Optimization</h3><p>Vercel delivery, domains, SEO, image performance and production checks.</p><b>↗</b></article>
+        <article class="service-card reveal-up"><span>11</span><h3>Digital Marketing</h3><p>SEO, social campaigns, paid ads, lead generation and data-driven conversion work.</p><b>↗</b></article>
+        <article class="service-card service-card--accent reveal-up"><span>12</span><h3>Interactive WebGL / Three.js</h3><p>Creative developer experiences with particles, 3D media, motion and immersive interaction.</p><b>↗</b></article>
+      </div>
+    </section>
+
+    <section class="process section" id="process">
+      <div class="section-label"><span>07</span><b>PROCESS</b></div>
+      <div class="process__layout">
+        <div class="process__sticky"><p class="kicker">A CLEAR PATH</p><h2 class="display-title split-title">Idea → architecture → interface → launch.</h2><div class="process-globe"><div class="process-globe__core">SHIP</div><i></i><i></i><i></i></div></div>
+        <div class="process__steps">
+          <article class="process-step reveal-up"><span>01</span><h3>Understand</h3><p>Clarify the goal, audience, content, constraints and success criteria.</p></article>
+          <article class="process-step reveal-up"><span>02</span><h3>Plan</h3><p>Shape architecture, data, user journeys and delivery sequence.</p></article>
+          <article class="process-step reveal-up"><span>03</span><h3>Design</h3><p>Create a visual system and interaction direction around the real product.</p></article>
+          <article class="process-step reveal-up"><span>04</span><h3>Develop</h3><p>Build reusable UI, secure workflows, integrations and content controls.</p></article>
+          <article class="process-step reveal-up"><span>05</span><h3>Test</h3><p>Check responsive behavior, permissions, edge states, performance and build quality.</p></article>
+          <article class="process-step reveal-up"><span>06</span><h3>Launch</h3><p>Deploy, connect the domain, verify production and hand over clear setup notes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy section">
+      <div class="section-label"><span>08</span><b>HOW I THINK</b></div>
+      <div class="philosophy__grid">
+        <div><p class="kicker">PRODUCT THINKING</p><h2 class="display-title split-title">Clean code is useful when it solves the right problem.</h2><p class="body-xl muted reveal-up">The strongest implementation joins product thinking, interaction quality, secure data and careful delivery.</p></div>
+        <div class="code-window tilt-card reveal-up"><header><span class="dots">● ● ●</span><strong>product-thinking.ts</strong></header><pre><code><i>01</i> const approach = {
+<i>02</i>   understand: <b>"the real workflow"</b>,
+<i>03</i>   design: <b>"for clarity + character"</b>,
+<i>04</i>   build: [<b>"secure"</b>, <b>"fast"</b>, <b>"scalable"</b>],
+<i>05</i>   test: <b>"every meaningful path"</b>,
+<i>06</i>   motion: <b>"with purpose"</b>,
+<i>07</i>   ship: <b>true</b>,
+<i>08</i> };</code></pre></div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact__sphere" aria-hidden="true"></div>
+      <div class="contact__inner">
+        <p class="kicker reveal-up">START A CONVERSATION</p>
+        <h2 class="contact__title"><span>LET'S BUILD</span><span>SOMETHING</span><span class="outline">USEFUL.</span></h2>
+        <p class="contact__lead reveal-up">Tell me what you are building, what is getting in the way and what a successful result should look like.</p>
+        <div class="contact__actions reveal-up">
+          <a class="contact-link magnetic" href="mailto:purusottamsingh238@gmail.com"><small>EMAIL</small><strong>purusottamsingh238@gmail.com</strong><b>↗</b></a>
+          <a class="contact-link magnetic" href="https://wa.me/917761980518" target="_blank" rel="noreferrer"><small>PHONE / WHATSAPP</small><strong>+91 77619 80518</strong><b>↗</b></a>
+          <a class="contact-link magnetic" href="https://github.com/purusottamkumar674" target="_blank" rel="noreferrer"><small>GITHUB</small><strong>@purusottamkumar674</strong><b>↗</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><strong>PURUSHOTTAM.</strong><span>Full-Stack Web Developer</span></div>
+    <div><span>Based in India</span><span>© 2026</span></div>
+    <a href="#home">BACK TO TOP ↑</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
